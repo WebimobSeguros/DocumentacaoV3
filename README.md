@@ -1,6 +1,6 @@
 # 📚 Documentação Webimob V3
 
-Este repositório centraliza toda a documentação **técnica** e de **negócio** da plataforma Webimob V3.
+Este repositório centraliza toda a documentação da plataforma Webimob V3.
 
 ---
 
