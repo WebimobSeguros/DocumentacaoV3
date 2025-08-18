@@ -27,6 +27,7 @@ Este repositório centraliza toda a documentação da plataforma Webimob V3.
 [> Acessar](./docs/processos/README.md)
 
 * Modelos de Processos de Negócio (BPMN)
+* **Baixar** extensão no VS Code - *Camunda Modeler by Miragon - miragon-gmbh.vs-code-bpmn-modeler*
 
 ### Documentação de funcionalidades
 
@@ -37,7 +38,7 @@ Este repositório centraliza toda a documentação da plataforma Webimob V3.
 * Regras de Negócio
 * Requisitos Funcionais
 
-![Hierarquia Artefatos](./artefatos/hierarquia-artefatos-funcionais.png)
+![Hierarquia Artefatos](./artefatos/images/hierarquia-artefatos-funcionais.png)
 
 ### Documentação técnica
 
