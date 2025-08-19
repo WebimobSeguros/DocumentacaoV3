@@ -13,7 +13,7 @@ export default async function Process({ params }: Props) {
 
     const { identifier } = await params
 
-    const process = docs_skeleton.find(item => item.identifier === identifier)
+    const process = docs_skeleton.processos.find(item => item.id === identifier)
 
     if (!process) {
         return (<p>Processo não encontrado</p>)
@@ -21,9 +21,9 @@ export default async function Process({ params }: Props) {
 
     return (<>
 
-        <h2 className={'font-bold text-lg mt-2 mb-4 ml-2'}>{process?.title}</h2>
+        <h2 className={'font-bold text-lg mt-2 mb-4 ml-2'}>{process?.titulo}</h2>
 
-        <BpmnViewer xmlUrl={'/artefatos-docs/camunda' + process?.arquivo_bpmn} />
+        <BpmnViewer xmlUrl={'/artefatos-docs/camunda/' + process?.arquivo_bpmn} />
 
     </>)
 }

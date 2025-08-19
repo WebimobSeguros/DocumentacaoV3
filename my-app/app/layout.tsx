@@ -3,8 +3,8 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 // CSS
 import "./globals.css"
-// Components
-import { Header } from "./components/Header"
+// Shadcn
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,12 +24,11 @@ export default function RootLayout({ children }: Props) {
     <html lang="pt-br">
       <body className={`${inter.className}`}>
 
-        <Header />
-        <main className={'p-3'}>
-          {children}
-        </main>
-        
+        {children}
+
+        <Toaster />
+
       </body>
     </html>
-  );
+  )
 }

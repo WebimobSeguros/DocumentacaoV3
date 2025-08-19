@@ -31,7 +31,6 @@ export default function BpmnViewer({ xmlUrl }: Props) {
 
             const canvas = v.get('canvas')
             canvas.zoom('fit-viewport', 'auto')
-            canvas.zoom(1)
         }
 
         init().catch(err => {
@@ -68,7 +67,7 @@ export default function BpmnViewer({ xmlUrl }: Props) {
     return (
         <div className="flex flex-col gap-2">
             <p className="text-sm opacity-70 ml-2">
-                Controles: segure e arraste para mover • Ctrl + roda do mouse para dar zoom
+                Controles disponíveis apenas em desktop*
             </p>
             <div
                 ref={containerRef}
