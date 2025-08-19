@@ -1,6 +1,10 @@
+// Next
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+// CSS
 import "./globals.css"
+// Components
+import { Header } from "./components/Header"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,10 +22,13 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="pt-br">
-      <body
-        className={`${inter.className}`}
-      >
-        {children}
+      <body className={`${inter.className}`}>
+
+        <Header />
+        <main className={'p-3'}>
+          {children}
+        </main>
+        
       </body>
     </html>
   );

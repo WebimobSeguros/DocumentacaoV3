@@ -17,39 +17,29 @@ Este repositório centraliza toda a documentação da plataforma Webimob V3.
 
 ### Documentação de Contexto
 
-[> Acessar](./docs/contexto/README.md)
-
 * Visão
 * Produtos
 * Stakeholders
 
 ### Documentação de processos
 
-[> Acessar](./docs/processos/README.md)
-
 * Modelos de Processos de Negócio (BPMN)
 * **Baixar** extensão no VS Code: *Camunda Modeler by Miragon - miragon-gmbh.vs-code-bpmn-modeler*
 
 ### Documentação de funcionalidades
-
-[> Acessar](./docs/funcionalidades/README.md)
 
 * Casos de Uso
 * Histórias de Usuário
 * Regras de Negócio
 * Requisitos Funcionais
 
-![Hierarquia Artefatos](./artefatos/images/hierarquia-artefatos-funcionais.png)
+![Hierarquia Artefatos](./my-app/public/artefatos-docs/images/hierarquia-artefatos-funcionais.png)
 
 ### Documentação técnica
-
-[> Acessar](./docs/tecnica/README.md)
 
 * Documentação de arquitetura (visão da distribuição lógica e física do sistema)
 * Documentação de integrações com serviços externos
 
 ### Documentação de validação
-
-[> Acessar](./docs/validacao/README.md)
 
 * Documentação de casos de teste
