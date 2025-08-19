@@ -9,6 +9,7 @@ Este repositório centraliza toda a documentação da plataforma Webimob V3.
 | Nome | E-mail pessoal | Número |
 | --- | --- | --- |
 | Bernardo Cruz Rohlfs | berohlfs@gmail.com | (31) 9 9959-2002 |
+| Eric Leal | ericgleal@gmail.com | (31) 9 3618-0182 |
 
 ---
 
@@ -19,7 +20,7 @@ Este repositório centraliza toda a documentação da plataforma Webimob V3.
 [> Acessar](./docs/contexto/README.md)
 
 * Visão
-* Produto
+* Produtos
 * Stakeholders
 
 ### Documentação de processos
