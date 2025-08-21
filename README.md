@@ -37,8 +37,6 @@ Este repositório centraliza toda a documentação da plataforma Webimob V3.
 * Regras de Negócio
 * Requisitos Funcionais
 
-![Hierarquia Artefatos](./my-app/public/artefatos-docs/images/hierarquia-artefatos-funcionais.png)
-
 ### Documentação técnica
 
 * Documentação de arquitetura (visão da distribuição lógica e física do sistema)
