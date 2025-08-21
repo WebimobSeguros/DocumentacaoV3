@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mx" class="mxgraph" style="height:100%"></div>
+
+    <script>
+        (function () {
+            // pega query params
+            const p = new URLSearchParams(location.search);
+            // caminho do arquivo (com fallback)
+            const urlParam = p.get("url") || '';
+
+            // cria config
+            const cfg = {
+                url: urlParam,
+                nav: Number(p.get("nav") ?? 1),
+                layers: Number(p.get("layers") ?? 1),
+                highlight: p.get("highlight") || "#0000ff"
+            };
+
+            // aplica config no elemento
+            document.getElementById("mx").setAttribute("data-mxgraph", JSON.stringify(cfg));
+
+            // injeta o script do viewer
+            var s = document.createElement("script");
+            s.src = "https://viewer.diagrams.net/js/viewer-static.min.js";
+            s.onload = function () {
+                if (window.GraphViewer && window.GraphViewer.processElements) {
+                    window.GraphViewer.processElements();
+                } else if (window.renderDiagrams) {
+                    window.renderDiagrams();
+                }
+            };
+            document.body.appendChild(s);
+        })();
+    </script>
+</body>
+
+</html>

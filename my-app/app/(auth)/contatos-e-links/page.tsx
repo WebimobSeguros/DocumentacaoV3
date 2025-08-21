@@ -1,56 +1,98 @@
+// Shadcn
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow
+} from "@/components/ui/table"
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+// Utils
+import { contatos_e_links } from "@/utils/contatos_e_links"
+// Next
+import Link from "next/link"
+// Icons
+import { ExternalLink } from "lucide-react"
+
 export default function ContatosELinks() {
-    return (<></>)
+
+    return (<>
+        <Accordion type="single" collapsible>
+            {contatos_e_links.map(item => (
+                <AccordionItem value={item.titulo} key={item.titulo}>
+                    <AccordionTrigger>
+                        {item.titulo}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                        <section className={'mb-4'}>
+                            <Table className={'border mb-3'}>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead>Título</TableHead>
+                                        <TableHead className={'pl-4'}>Link</TableHead>
+                                        <TableHead>Usuário</TableHead>
+                                        <TableHead>Senha</TableHead>
+                                        <TableHead>Anotações</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {item.links.map(link => (
+                                        <TableRow key={link.titulo}>
+                                            <TableCell className="font-medium">
+                                                <Badge>{link.titulo}</Badge>
+                                            </TableCell>
+                                            <TableCell>
+                                                <Link href={link.link}>
+                                                    <Button variant={'link'} size={'sm'}>
+                                                        Acessar Link <ExternalLink />
+                                                    </Button>
+                                                </Link>
+                                            </TableCell>
+                                            <TableCell>{link.usuario}</TableCell>
+                                            <TableCell>{link.senha}</TableCell>
+                                            <TableCell className={'text-muted-foreground text-xs'}>{link.anotacoes}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                            <Table className={'border'}>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead>Nome</TableHead>
+                                        <TableHead>Setor</TableHead>
+                                        <TableHead>Número</TableHead>
+                                        <TableHead>E-mail</TableHead>
+                                        <TableHead>Anotações</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {item.contatos.map(link => (
+                                        <TableRow key={link.nome}>
+                                            <TableCell className="font-medium">
+                                                <Badge variant={'secondary'}>
+                                                    {link.nome}
+                                                </Badge>
+                                            </TableCell>
+                                            <TableCell>{link.setor}</TableCell>
+                                            <TableCell>{link.numero}</TableCell>
+                                            <TableCell>{link.email}</TableCell>
+                                            <TableCell className={'text-muted-foreground text-xs'}>{link.anotacoes}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </section>
+                    </AccordionContent>
+                </AccordionItem>
+            ))}
+        </Accordion>
+    </>)
 }
-
-// # Contato com Seguradoras 🔗
-
-// ## Porto
-
-// | Titulo | Link | Usuário | Senha | Descrição |
-// | --- | --- | --- | --- | --- |
-// | Acesso Portal Corretor | [Link Portal](https://corretor.portoseguro.com.br/corretoronline) | 758.523.656-53 | Web@2025 | SUSEP: R4GK9J (P) / Senhas mudam com frequência. Consultar equipe comercial. |
-// | Acesso Portal Desenvolvedor | [Link Portal Dev](https://dev.portoseguro.com.br/api-portal/user/login) | ti@webimob.com.br | 48EG%+AuQ*n#T | Documentação (Incêndio e Fiança). |
-// | Documentação Cap | [Link Swagger](https://app.swaggerhub.com/apis-docs/lucas.martins2/riscos-financeiros_capitalizacao/1.0.0) | Livre | Livre | Documentação avulsa do título de capitalização. |
-
-// | Nome Contato Seguradora | Setor | Número | E-mail | Descrição |
-// | --- | --- | --- | --- | --- |
-// | Ellen Ingrid | Comercial | +55 (31) 9322-0005 | ... | Para emergências, chamados travados e dúvidas de produto. |
-// | Abertura de chamados | TI | ... | ... | No Portal Dev. Para criação de chamados de TI. |
-
-// ## Tokio
-
-// | Titulo | Link | Usuário | Senha | Descrição |
-// | --- | --- | --- | --- | --- |
-// | Acesso Portal Corretor | [Link Portal](https://ssoportais3.tokiomarine.com.br/openam/XUI/?realm=TOKIOLFR&goto=http://portalparceiros.tokiomarine.com.br/#login/) | 04961798614 | Tokio@2025 | Senhas mudam com frequência. Consultar equipe comercial. |
-// | Acesso Portal Desenvolvedor | [Link Portal Dev](https://ssoportais3.tokiomarine.com.br/openam/XUI/?realm=TOKIOLFR&goto=http://portalparceiros.tokiomarine.com.br/#login/) | 13800975688 | @#$Tokio25 | Documentação (Incêndio e Fiança) | 
-
-// | Nome Contato Seguradora | Setor | Número | E-mail | Descrição |
-// | --- | --- | --- | --- | --- |
-// | Rafael Araujo | TI | ... | rafael.filho@tokiomarine.com.br | Responsável pelas APIs de Incêndio e Fiança. |
-// | Larissa Silveira | Comercial | +55 (31) 9888-2400 | larissa.silveira@tokiomarine.com.br | Para emergências, chamados travados e dúvidas de produto. |
-// | Abertura de chamados | TI | ... | ... | No Portal Dev. Para criação de chamados de TI. |
-
-// ## Too
-
-// | Titulo | Link | Usuário | Senha | Descrição |
-// | --- | --- | --- | --- | --- |
-// | Acesso Portal Coretor | [Link Portal](https://openapi-uat.tooseguros.com.br/keycloak/auth/realms/openid-backend-kube/protocol/openid-connect/auth?client_id=21a9fe739b33454f85df67f1f4559add&redirect_uri=https%3A%2F%2Fhml-portalparceiro.tooseguros.com.br%2Fsignin-callback&response_type=code&scope=openid+email+authorized_apps+profile&state=bd28a5a15634482caffb7eb46eabe265&code_challenge=gbCZPh3t6_KMdWdjOXakJpw4sfPsvQFaJeSprUtlmkA&code_challenge_method=S256) | 34156096000101 | @Webi2021 | Senhas mudam com frequência. Consultar equipe comercial. |
-// | Acesso Portal Desenvolvedor | [Link Portal Dev](https://developers.tooseguros.com.br/documentacao/api-fianca-locaticia-regras-e-payloads-v2) | Livre | Livre | Documentação (Fiança) |
-// | Acesso Portal Chamados | [Link Portal Chamados Dev](https://tooseguros.atlassian.net/servicedesk/customer/user/login) | ti@webimob.com.br | Ti@webimob2025 | ... | 
-
-// | Nome Contato Seguradora | Setor | Número | E-mail | Descrição |
-// | --- | --- | --- | --- | --- |
-// | Danielle Marques | Comercial | +55 (11) 9659-7579 | ... | Para emergências, chamados travados e dúvidas de produto. |
-// | Abertura de chamados | TI | ... | ... | No Portal Chamados Dev. Para criação de chamados de TI. |
-
-// ## Pottencial
-
-// | Titulo | Link | Usuário | Senha | Descrição |
-// | --- | --- | --- | --- | --- |
-// | Acesso Portal Coretor | [Link Portal](https://parceiro.pottencial.com.br/login/autenticacao) | operacional@webimob.com.br | Webimob@2025 | Senhas mudam com frequência. Consultar equipe comercial. |
-// | Acesso Portal Desenvolvedor | [Link Portal Dev](https://developers.pottencial.com.br/api-portal/pt-br/content/fiancalocaticia) | Livre | Livre | Documentação (Fiança) |
-
-// | Nome Contato Seguradora | Setor | Número | E-mail | Descrição |
-// | --- | --- | --- | --- | --- |
-// | Central de TI | TI | ... | developers@pottencial.com.br | Pedidos |
-// | Leandro Dourado | TI | ... | leandro.dourado@pottencial.com.br | Atendimento. Ele recomendou que o primeiro contato fosse feito com a Central. |

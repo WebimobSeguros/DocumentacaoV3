@@ -3,7 +3,15 @@ type Processos = {
     titulo: string
     descricao: string
     arquivo_bpmn: string
-    casos_de_uso: []
+    arquivo_casos_de_uso: string
+    regras_de_negocio: string[]
+    casos_de_uso: {
+        nome_ator: string,
+        itens: {
+            titulo: string,
+            requisitos_funcionais: string[]
+        }[]
+    }[]
 }[]
 
 type Arquitetura = {
@@ -13,49 +21,154 @@ type Arquitetura = {
     arquivo_diagrama: string
 }[]
 
+type Dados = {
+    id: string
+    titulo: string
+    descricao: string
+    arquivo_diagrama: string
+}[]
+
 type DocsSkeleton = {
     processos: Processos
     arquitetura: Arquitetura
+    dados: Dados
 }
 
 export const docs_skeleton: DocsSkeleton = {
     processos: [
         {
             id: 'seguro-incendio',
-            titulo: 'Seguro Incêndio',
-            descricao: '',
+            titulo: 'Contratação de Seguro Incêndio',
+            descricao: 'Desde a criação da cotação, até o calculo, contratação e emissão da apólice.',
             arquivo_bpmn: 'seguro-incendio.bpmn',
+            arquivo_casos_de_uso: 'UC-seguro-incendio.drawio',
+            regras_de_negocio: [
+                'Uma cotação de Seguro Incêndio deve estar vinculada a exatamente uma seguradora sendo ela Porto Seguro ou Tokio Marine.',
+            ],
             casos_de_uso: [
-
+                {
+                    nome_ator: 'Usuário Imob / Webimob',
+                    itens: [{
+                        titulo: 'Calcular Orçamento',
+                        requisitos_funcionais: [
+                            'O sistema deve impedir a execução do cálculo caso algum campo obrigatório do formulário não esteja preenchido.'
+                        ]
+                    }]
+                }
             ]
         },
         {
             id: 'seguro-fianca',
-            titulo: 'Seguro Fiança',
-            descricao: '',
+            titulo: 'Contratação de Seguro Fiança',
+            descricao: 'Desde a criação da cotação, até a análise de crédito, solicitação de contratação e emissão da apólice.',
             arquivo_bpmn: 'seguro-fianca.bpmn',
+            arquivo_casos_de_uso: '',
+            regras_de_negocio: [],
             casos_de_uso: [
-
+                {
+                    nome_ator: '',
+                    itens: [{
+                        titulo: '',
+                        requisitos_funcionais: []
+                    }]
+                }
             ]
         },
         {
             id: 'titulo-capitalizacao',
-            titulo: 'Título de Capitalização',
-            descricao: '',
+            titulo: 'Contratação de Título de Capitalização',
+            descricao: 'Desde do preenchimento dos dados, até o envio da proposta e emissão do título.',
             arquivo_bpmn: 'titulo-capitalizacao.bpmn',
+            arquivo_casos_de_uso: '',
+            regras_de_negocio: [],
             casos_de_uso: [
-
+                {
+                    nome_ator: '',
+                    itens: [{
+                        titulo: '',
+                        requisitos_funcionais: []
+                    }]
+                }
             ]
-        }
+        },
+        {
+            id: 'sinistros',
+            titulo: 'Solicitação de Abertura de Sinistros',
+            descricao: 'Envolve a solicitação pela imobiliária, o acompanhamento do setor operacional e a liquidação do pedido.',
+            arquivo_bpmn: 'sinistros.bpmn',
+            arquivo_casos_de_uso: '',
+            regras_de_negocio: [],
+            casos_de_uso: [
+                {
+                    nome_ator: '',
+                    itens: [{
+                        titulo: '',
+                        requisitos_funcionais: []
+                    }]
+                }
+            ]
+        },
+        {
+            id: 'resgates',
+            titulo: 'Resgates de Resgates',
+            descricao: 'Envolve a solicitação pela imobiliária, o acompanhamento do setor operacional e a liquidação do pedido.',
+            arquivo_bpmn: 'resgates.bpmn',
+            arquivo_casos_de_uso: '',
+            regras_de_negocio: [],
+            casos_de_uso: [
+                {
+                    nome_ator: '',
+                    itens: [{
+                        titulo: '',
+                        requisitos_funcionais: []
+                    }]
+                }
+            ]
+        },
+        {
+            id: 'cancelamentos',
+            titulo: 'Solicitação de Cancelamentos',
+            descricao: 'Envolve a solicitação pela imobiliária, o acompanhamento do setor operacional e a efetivação do cancelamento.',
+            arquivo_bpmn: 'cancelamentos.bpmn',
+            arquivo_casos_de_uso: '',
+            regras_de_negocio: [],
+            casos_de_uso: [
+                {
+                    nome_ator: '',
+                    itens: [{
+                        titulo: '',
+                        requisitos_funcionais: []
+                    }]
+                }
+            ]
+        },
     ],
     arquitetura: [
         {
             id: 'implantacao',
             titulo: 'Diagrama de Implantação',
-            descricao: '',
-            arquivo_diagrama: ''
+            descricao: 'Mostra a infraestrutura física ou virtual onde os componentes são implantados e executados.',
+            arquivo_diagrama: 'diagrama-implantacao.drawio'
         },
+        {
+            id: 'componentes',
+            titulo: 'Diagrama de Componentes',
+            descricao: 'Mostra os componentes/serviços executáveis de software e suas interfaces/dependências.',
+            arquivo_diagrama: 'diagrama-componentes.drawio'
+        },
+        {
+            id: 'pacotes',
+            titulo: 'Diagrama de Pacotes',
+            descricao: 'Mostra a organização lógica dos módulos do sistema.',
+            arquivo_diagrama: 'diagrama-pacotes.drawio'
+        },
+    ],
+    dados: [
+        {
+            id: 'der',
+            titulo: 'Diagrama de Entidades e Relacionamentos',
+            descricao: 'Definição de tabelas atributos e relações.',
+            arquivo_diagrama: ''
+        }
     ]
 }
-
-

@@ -66,13 +66,13 @@ export default function BpmnViewer({ xmlUrl }: Props) {
 
     return (
         <div className="flex flex-col gap-2">
-            <p className="text-sm opacity-70 ml-2">
-                Controles disponíveis apenas em desktop*
-            </p>
             <div
                 ref={containerRef}
-                className={`w-full h-[60vh] overflow-auto touch-none select-none border rounded-lg ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
+                className={`w-full h-[300px] overflow-auto touch-none select-none border rounded-lg ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
             />
+            <p className="text-xs text-muted-foreground ml-2">
+                Controles disponíveis apenas em desktop*
+            </p>
         </div>
     )
 }

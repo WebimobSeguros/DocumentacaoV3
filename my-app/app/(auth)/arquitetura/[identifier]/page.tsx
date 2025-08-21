@@ -21,5 +21,12 @@ export default async function Arquitetura({ params }: Props) {
 
         <h2 className={'font-bold text-lg mt-2 mb-4 ml-2'}>{arquitetura?.titulo}</h2>
 
+        <iframe
+            src={`/drawio-viewer.html?url=${encodeURI(`/artefatos-docs/drawio/arquitetura/${arquitetura.arquivo_diagrama}`)}`}
+            allowFullScreen
+            className={'border rounded-md w-1/2 aspect-square'}
+            loading="lazy"
+        />
+
     </>)
 }
