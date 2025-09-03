@@ -11,7 +11,7 @@ export default function AuthLayout({ children }: Props) {
     <>
       <Header />
 
-      <main className={'p-6 min-h-[450px]'}>
+      <main className={'p-6 min-h-[700px]'}>
         {children}
       </main>
 

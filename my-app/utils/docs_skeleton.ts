@@ -19,9 +19,12 @@ type Arquitetura = {
     titulo: string
     descricao: string
     arquivo_diagrama: string
-    paragrafos: {
-        main: string
-        list?: string[]
+    sections: {
+        title: string
+        paragrafos: {
+            text: string,
+            list?: string[]
+        }[]
     }[]
 }[]
 
@@ -170,19 +173,60 @@ export const docs_skeleton: DocsSkeleton = {
             titulo: 'Diagrama de Implantação',
             descricao: 'Mostra a infraestrutura física ou virtual onde os componentes são implantados e executados.',
             arquivo_diagrama: 'diagrama-implantacao.drawio',
-            paragrafos: [
+            sections: [
                 {
-                    main: 'Browser',
-                    list: ['exe', 'exe']
+                    title: '1º Nodo: Browser / Navegador',
+                    paragrafos: [
+                        {
+                            text: 'O NextJS é um framework full-stack. Por esse motivo, uma grande parte dele é executado client-side (front-end). É aqui que os hooks do React poderão ser utilizados. O Browser recebe as páginas ao longo da navegação e fica responsável por:',
+                            list: [
+                                'Controlar States.',
+                                'Gerenciar Contextos.',
+                                'Enviar dados ao servidor.',
+                                'Organizar a navegação.'
+                            ]
+                        }
+                    ]
                 },
                 {
-                    main: 'Banco PostgreSQL e AWS S3 no supabase',
-                    list: ['exdsdsadse', 'exsdse']
+                    title: '2º Nodo: Vercel',
+                    paragrafos: [
+                        {
+                            text: 'Em contrapartida, a outra parte do framework é executada server-side (back-end). Esta seção roda nos servidores da Vercel, que fica responsável pela:',
+                            list: [
+                                'SSR (Server-Side-Rendering) de componentes.',
+                                'Execução de server actions (chamadas de servidor para inclusão, edição, etc).',
+                                'Comunicação com o banco de dados.',
+                                'Autenticação.',
+                                'Comunicação com os buckets S3.'
+                            ]
+                        }
+                    ]
                 },
                 {
-                    main: 'Backend na vercell',
-                    list: ['exdsdsadse', 'exsdse']
+                    title: '3º Nodo: Supabase',
+                    paragrafos: [
+                        {
+                            text: 'Exemplo de descrição',
+                            list: [
+                                'Topic 01',
+                                'Topic 02'
+                            ]
+                        }
+                    ]
                 },
+                {
+                    title: '4º Nodo: Seguradoras',
+                    paragrafos: [
+                        {
+                            text: 'Exemplo de descrição',
+                            list: [
+                                'Topic 01',
+                                'Topic 02'
+                            ]
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -190,10 +234,18 @@ export const docs_skeleton: DocsSkeleton = {
             titulo: 'Diagrama de Componentes',
             descricao: 'Mostra os componentes/serviços executáveis de software e suas interfaces/dependências.',
             arquivo_diagrama: 'diagrama-componentes.drawio',
-            paragrafos: [
+            sections: [
                 {
-                    main: '',
-                    list: ['']
+                    title: '1º Nodo: Browser / Navegador',
+                    paragrafos: [
+                        {
+                            text: '',
+                            list: [
+                                '',
+                                ''
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -202,10 +254,18 @@ export const docs_skeleton: DocsSkeleton = {
             titulo: 'Diagrama de Pacotes',
             descricao: 'Mostra a organização lógica dos módulos do sistema.',
             arquivo_diagrama: 'diagrama-pacotes.drawio',
-            paragrafos: [
+            sections: [
                 {
-                    main: '',
-                    list: ['']
+                    title: '1º Nodo: Browser / Navegador',
+                    paragrafos: [
+                        {
+                            text: '',
+                            list: [
+                                '',
+                                ''
+                            ]
+                        }
+                    ]
                 }
             ]
         },
