@@ -19,6 +19,10 @@ type Arquitetura = {
     titulo: string
     descricao: string
     arquivo_diagrama: string
+    paragrafos: {
+        main: string
+        list?: string[]
+    }[]
 }[]
 
 type Dados = {
@@ -165,24 +169,46 @@ export const docs_skeleton: DocsSkeleton = {
             id: 'implantacao',
             titulo: 'Diagrama de Implantação',
             descricao: 'Mostra a infraestrutura física ou virtual onde os componentes são implantados e executados.',
-            arquivo_diagrama: 'diagrama-implantacao.drawio'
+            arquivo_diagrama: 'diagrama-implantacao.drawio',
+            paragrafos: [
+                {
+                    main: 'exe',
+                    list: ['exe', 'exe']
+                },
+                {
+                    main: 'dasdas dsa dsad sdasada dsdsad sd',
+                    list: ['exdsdsadse', 'exsdse']
+                },
+            ]
         },
         {
             id: 'componentes',
             titulo: 'Diagrama de Componentes',
             descricao: 'Mostra os componentes/serviços executáveis de software e suas interfaces/dependências.',
-            arquivo_diagrama: 'diagrama-componentes.drawio'
+            arquivo_diagrama: 'diagrama-componentes.drawio',
+            paragrafos: [
+                {
+                    main: '',
+                    list: ['']
+                }
+            ]
         },
         {
             id: 'pacotes',
             titulo: 'Diagrama de Pacotes',
             descricao: 'Mostra a organização lógica dos módulos do sistema.',
-            arquivo_diagrama: 'diagrama-pacotes.drawio'
+            arquivo_diagrama: 'diagrama-pacotes.drawio',
+            paragrafos: [
+                {
+                    main: '',
+                    list: ['']
+                }
+            ]
         },
     ],
     dados: {
         titulo: 'Diagrama de Entidades e Relacionamentos',
         descricao: 'Definição de tabelas atributos e relações.',
-        arquivo_diagrama: ''
+        arquivo_diagrama: '',
     }
 }
