@@ -172,11 +172,15 @@ export const docs_skeleton: DocsSkeleton = {
             arquivo_diagrama: 'diagrama-implantacao.drawio',
             paragrafos: [
                 {
-                    main: 'exe',
+                    main: 'Browser',
                     list: ['exe', 'exe']
                 },
                 {
-                    main: 'dasdas dsa dsad sdasada dsdsad sd',
+                    main: 'Banco PostgreSQL e AWS S3 no supabase',
+                    list: ['exdsdsadse', 'exsdse']
+                },
+                {
+                    main: 'Backend na vercell',
                     list: ['exdsdsadse', 'exsdse']
                 },
             ]
