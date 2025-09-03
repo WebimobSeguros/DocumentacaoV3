@@ -8,11 +8,6 @@ export async function checkSession(request: NextRequest) {
         request,
     })
 
-    if (request.nextUrl.pathname === '/logout') {
-        // Exclui os cookies independentemente do status da session ou rota 
-        return response
-    }
-
     const token = request.cookies.get('auth_token')?.value
 
     let token_valid = false
