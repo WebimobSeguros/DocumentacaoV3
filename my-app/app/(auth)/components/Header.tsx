@@ -23,7 +23,10 @@ export const Header = () => {
             <nav>
                 <ul className={'items-center gap-2 pr-5 hidden md:flex'}>
                     {navigation.map(item => (
-                        <Link key={item.title} href={item.link}>
+                        <Link
+                            prefetch={item.link === '/logout' ? false : true}
+                            key={item.title}
+                            href={item.link}>
                             <li>
                                 <Button variant={'ghost'} size={'sm'}>
                                     <item.Icon />{item.title}
@@ -41,7 +44,11 @@ export const Header = () => {
                     <PopoverContent>
                         <ul className={'flex flex-col items-center gap-2'}>
                             {navigation.map(item => (
-                                <Link key={item.title} href={item.link} className={'w-full'}>
+                                <Link
+                                    key={item.title}
+                                    href={item.link}
+                                    className={'w-full'}
+                                    prefetch={item.link === '/logout' ? false : true}>
                                     <li>
                                         <Button variant={'ghost'} size={'sm'} className={'w-full'}>
                                             <item.Icon />{item.title}
