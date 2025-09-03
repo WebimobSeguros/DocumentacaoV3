@@ -35,10 +35,9 @@ export const login = async (data: z.infer<typeof login_validation>) => {
             sameSite: "strict",
             path: "/",
             expires: expiryDate
-        })
-
-        redirect('/')
+        })     
     } else {
         return 'Credenciais inválidas.'
     }
+    redirect('/login')
 }
