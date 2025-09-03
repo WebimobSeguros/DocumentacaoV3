@@ -5,9 +5,9 @@ type Processos = {
     arquivo_bpmn: string
     arquivo_casos_de_uso: string
     regras_de_negocio: string[]
-    casos_de_uso: {
+    atores: {
         nome_ator: string,
-        itens: {
+        casos_de_uso: {
             titulo: string,
             requisitos_funcionais: string[]
         }[]
@@ -22,11 +22,10 @@ type Arquitetura = {
 }[]
 
 type Dados = {
-    id: string
     titulo: string
     descricao: string
     arquivo_diagrama: string
-}[]
+}
 
 type DocsSkeleton = {
     processos: Processos
@@ -45,16 +44,34 @@ export const docs_skeleton: DocsSkeleton = {
             regras_de_negocio: [
                 'Uma cotação de Seguro Incêndio deve estar vinculada a exatamente uma seguradora sendo ela Porto Seguro ou Tokio Marine.',
             ],
-            casos_de_uso: [
+            atores: [
                 {
                     nome_ator: 'Usuário Imob / Webimob',
-                    itens: [{
+                    casos_de_uso: [{
                         titulo: 'Calcular Orçamento',
                         requisitos_funcionais: [
                             'O sistema deve impedir a execução do cálculo caso algum campo obrigatório do formulário não esteja preenchido.'
                         ]
                     }]
-                }
+                },
+                {
+                    nome_ator: 'Usuário Imob',
+                    casos_de_uso: [{
+                        titulo: 'Calcular Orçamento',
+                        requisitos_funcionais: [
+                            'O sistema deve impedir a execução do cálculo caso algum campo obrigatório do formulário não esteja preenchido.'
+                        ]
+                    }]
+                },
+                {
+                    nome_ator: 'Usuário Webimob',
+                    casos_de_uso: [{
+                        titulo: 'Calcular Orçamento',
+                        requisitos_funcionais: [
+                            'O sistema deve impedir a execução do cálculo caso algum campo obrigatório do formulário não esteja preenchido.'
+                        ]
+                    }]
+                },
             ]
         },
         {
@@ -64,10 +81,10 @@ export const docs_skeleton: DocsSkeleton = {
             arquivo_bpmn: 'seguro-fianca.bpmn',
             arquivo_casos_de_uso: '',
             regras_de_negocio: [],
-            casos_de_uso: [
+            atores: [
                 {
                     nome_ator: '',
-                    itens: [{
+                    casos_de_uso: [{
                         titulo: '',
                         requisitos_funcionais: []
                     }]
@@ -81,10 +98,10 @@ export const docs_skeleton: DocsSkeleton = {
             arquivo_bpmn: 'titulo-capitalizacao.bpmn',
             arquivo_casos_de_uso: '',
             regras_de_negocio: [],
-            casos_de_uso: [
+            atores: [
                 {
                     nome_ator: '',
-                    itens: [{
+                    casos_de_uso: [{
                         titulo: '',
                         requisitos_funcionais: []
                     }]
@@ -98,10 +115,10 @@ export const docs_skeleton: DocsSkeleton = {
             arquivo_bpmn: 'sinistros.bpmn',
             arquivo_casos_de_uso: '',
             regras_de_negocio: [],
-            casos_de_uso: [
+            atores: [
                 {
                     nome_ator: '',
-                    itens: [{
+                    casos_de_uso: [{
                         titulo: '',
                         requisitos_funcionais: []
                     }]
@@ -115,10 +132,10 @@ export const docs_skeleton: DocsSkeleton = {
             arquivo_bpmn: 'resgates.bpmn',
             arquivo_casos_de_uso: '',
             regras_de_negocio: [],
-            casos_de_uso: [
+            atores: [
                 {
                     nome_ator: '',
-                    itens: [{
+                    casos_de_uso: [{
                         titulo: '',
                         requisitos_funcionais: []
                     }]
@@ -132,10 +149,10 @@ export const docs_skeleton: DocsSkeleton = {
             arquivo_bpmn: 'cancelamentos.bpmn',
             arquivo_casos_de_uso: '',
             regras_de_negocio: [],
-            casos_de_uso: [
+            atores: [
                 {
                     nome_ator: '',
-                    itens: [{
+                    casos_de_uso: [{
                         titulo: '',
                         requisitos_funcionais: []
                     }]
@@ -163,12 +180,9 @@ export const docs_skeleton: DocsSkeleton = {
             arquivo_diagrama: 'diagrama-pacotes.drawio'
         },
     ],
-    dados: [
-        {
-            id: 'der',
-            titulo: 'Diagrama de Entidades e Relacionamentos',
-            descricao: 'Definição de tabelas atributos e relações.',
-            arquivo_diagrama: ''
-        }
-    ]
+    dados: {
+        titulo: 'Diagrama de Entidades e Relacionamentos',
+        descricao: 'Definição de tabelas atributos e relações.',
+        arquivo_diagrama: ''
+    }
 }

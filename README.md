@@ -2,7 +2,7 @@
 
 Este repositório centraliza toda a documentação da plataforma Webimob V3.
 
-[Website da Documentação](https://documentacao-v3.vercel.app/)
+[Website da Documentação](https://docs.webimob.com.br)
 
 ---
 
@@ -15,34 +15,3 @@ Este repositório centraliza toda a documentação da plataforma Webimob V3.
 | Gabriel Sathler | gabrielvdfs@gmail.com | (31) 9 7137-9793 |
 
 *Entrar em contato para acessar o portal*
-
----
-
-## 📂 Conteúdo da Documentação
-
-### Documentação de Contexto
-
-* Visão
-* Produtos
-* Stakeholders
-
-### Documentação de processos
-
-* Modelos de Processos de Negócio (BPMN)
-* **Baixar** extensão no VS Code: *Camunda Modeler by Miragon - miragon-gmbh.vs-code-bpmn-modeler*
-
-### Documentação de funcionalidades
-
-* Casos de Uso
-* Histórias de Usuário
-* Regras de Negócio
-* Requisitos Funcionais
-
-### Documentação técnica
-
-* Documentação de arquitetura (visão da distribuição lógica e física do sistema)
-* Documentação de integrações com serviços externos
-
-### Documentação de validação
-
-* Documentação de casos de teste

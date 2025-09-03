@@ -1,18 +1,6 @@
 // Shadcn
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow
-} from "@/components/ui/table"
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 // Utils
@@ -25,6 +13,10 @@ import { ExternalLink } from "lucide-react"
 export default function ContatosELinks() {
 
     return (<>
+        <h1 className={'text-xl font-bold mb-2'}>Contatos e Links</h1>
+        <p className={'text-muted-foreground text-sm mb-4'}>
+            As informações abaixo servem de suporte para quando for necessário entrar em contato com os nossos parceiros, mediante qualquer emergência, sugestão ou dúvida.
+        </p>
         <Accordion type="single" collapsible>
             {contatos_e_links.map(item => (
                 <AccordionItem value={item.titulo} key={item.titulo}>
@@ -50,7 +42,7 @@ export default function ContatosELinks() {
                                                 <Badge>{link.titulo}</Badge>
                                             </TableCell>
                                             <TableCell>
-                                                <Link href={link.link}>
+                                                <Link href={link.link} target={'_blank'}>
                                                     <Button variant={'link'} size={'sm'}>
                                                         Acessar Link <ExternalLink />
                                                     </Button>

@@ -8,6 +8,11 @@ export async function checkSession(request: NextRequest) {
         request,
     })
 
+    if (request.nextUrl.pathname === '/logout') {
+        // Exclui os cookies independentemente do status da session ou rota 
+        return response
+    }
+
     const token = request.cookies.get('auth_token')?.value
 
     let token_valid = false
@@ -31,7 +36,7 @@ export async function checkSession(request: NextRequest) {
     })
 
     // If session exists, redirect from '/' to '/dashboard'
-    if (token_valid && request.nextUrl.pathname === '/login') {
+    if (token_valid && isPublicRoute) {
         const url = request.nextUrl.clone()
         url.pathname = '/'
         return NextResponse.redirect(url)

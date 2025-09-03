@@ -69,13 +69,10 @@ export default function Home() {
         <h1 className={'font-bold mb-3'}>• Dados</h1>
 
         <section className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4'}>
-          {docs_skeleton.dados.map(item => (
-            <Card
-              description={item.descricao}
-              link={`/dados/${item.id}`}
-              key={item.id}
-              titulo={item.titulo} />
-          ))}
+          <Card
+            description={docs_skeleton.dados.descricao}
+            link={`/der`}
+            titulo={docs_skeleton.dados.titulo} />
         </section>
       </div>
 

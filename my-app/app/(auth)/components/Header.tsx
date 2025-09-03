@@ -4,11 +4,7 @@ import Link from "next/link"
 // Utils
 import { navigation } from "@/utils/navigation"
 // Shadcn
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
 // Icons
 import { Menu } from "lucide-react"
