@@ -24,7 +24,6 @@ export const Header = () => {
                 <ul className={'items-center gap-2 pr-5 hidden md:flex'}>
                     {navigation.map(item => (
                         <Link
-                            prefetch={item.link === '/logout' ? false : true}
                             key={item.title}
                             href={item.link}>
                             <li>
@@ -47,8 +46,7 @@ export const Header = () => {
                                 <Link
                                     key={item.title}
                                     href={item.link}
-                                    className={'w-full'}
-                                    prefetch={item.link === '/logout' ? false : true}>
+                                    className={'w-full'}>
                                     <li>
                                         <Button variant={'ghost'} size={'sm'} className={'w-full'}>
                                             <item.Icon />{item.title}
