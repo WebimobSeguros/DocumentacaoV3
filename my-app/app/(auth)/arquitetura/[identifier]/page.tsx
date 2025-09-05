@@ -39,7 +39,7 @@ export default async function Arquitetura({ params }: Props) {
                         </h1>
                         {item.paragrafos && item.paragrafos.map((p, index_p) => (
                             <div key={index_p}>
-                                <p className={'font-medium text-sm mb-3'}>
+                                <p className={'text-sm mb-3'}>
                                     {p.text}
                                 </p>
 
