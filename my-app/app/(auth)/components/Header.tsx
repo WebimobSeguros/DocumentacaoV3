@@ -1,17 +1,13 @@
 // Next
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 // Utils
-import { navigation } from "@/utils/navigation";
+import { navigation } from "@/utils/navigation"
 // Shadcn
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Button } from "@/components/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { Button } from "@/components/ui/button"
 // Icons
-import { Menu } from "lucide-react";
+import { Menu } from "lucide-react"
 
 export const Header = () => {
   return (
@@ -67,5 +63,5 @@ export const Header = () => {
         </Popover>
       </nav>
     </header>
-  );
-};
+  )
+}
