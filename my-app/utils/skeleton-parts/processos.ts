@@ -74,7 +74,7 @@ export const processos: Processos = [
         id: 'sinistros',
         titulo: 'Solicitação de Abertura de Sinistros',
         descricao: 'Envolve a solicitação pela imobiliária, o acompanhamento do setor operacional e a liquidação do pedido.',
-        arquivo_bpmn: 'sinistros.bpmn',
+        arquivo_bpmn: 'solicitacao-abertura-sinistro-seguro.bpmn',
         arquivo_casos_de_uso: '',
         regras_de_negocio: [],
         atores: [

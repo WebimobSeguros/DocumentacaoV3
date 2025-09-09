@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1ksue5u" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.22.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
   <bpmn:collaboration id="Collaboration_1urogw9">
-    <bpmn:participant id="Participant_1qwjml2" processRef="Process_0vf1lkj" />
+    <bpmn:participant id="Participant_1fwefae" name="solicitação resgate" processRef="Process_0kmy9oi" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_0vf1lkj" isExecutable="true">
-    <bpmn:startEvent id="StartEvent_1" />
+  <bpmn:process id="Process_0kmy9oi" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_1ec0uz9">
+      <bpmn:lane id="Lane_11bnia7" name="usuario imobiliaria">
+        <bpmn:flowNodeRef>Event_1vo4dp7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0375y48</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0l2lgv3" name="usuario webimob" />
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Event_1vo4dp7" />
+    <bpmn:subProcess id="Activity_0375y48" name="Emissão do título" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1urogw9">
-      <bpmndi:BPMNShape id="Participant_1qwjml2_di" bpmnElement="Participant_1qwjml2" isHorizontal="true">
-        <dc:Bounds x="100" y="52" width="1050" height="250" />
+      <bpmndi:BPMNShape id="Participant_1fwefae_di" bpmnElement="Participant_1fwefae" isHorizontal="true">
+        <dc:Bounds x="-20" y="10" width="670" height="440" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="179" y="159" width="36" height="36" />
+      <bpmndi:BPMNShape id="Lane_0l2lgv3_di" bpmnElement="Lane_0l2lgv3" isHorizontal="true">
+        <dc:Bounds x="10" y="260" width="640" height="190" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_11bnia7_di" bpmnElement="Lane_11bnia7" isHorizontal="true">
+        <dc:Bounds x="10" y="10" width="640" height="250" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1vo4dp7_di" bpmnElement="Event_1vo4dp7">
+        <dc:Bounds x="72" y="112" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0vnypxv_di" bpmnElement="Activity_0375y48">
+        <dc:Bounds x="140" y="90" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_0d4foct">
+    <bpmndi:BPMNPlane id="BPMNPlane_0zglh89" bpmnElement="Activity_0375y48" />
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
