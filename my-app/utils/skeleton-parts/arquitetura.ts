@@ -144,7 +144,8 @@ export const arquitetura: Arquitetura = [
         title: "Seguradoras",
         paragrafos: [
           {
-            text: "texto sobre seguradoras",
+            text: "Abstração de todas as APIs das seguradoras parceiras.",
+            list: ['Cálculos', 'Análises', 'Contratação', 'Download de documentos', 'Autenticação']
           },
         ],
       },
