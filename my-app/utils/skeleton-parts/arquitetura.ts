@@ -130,7 +130,13 @@ export const arquitetura: Arquitetura = [
         title: "S3",
         paragrafos: [
           {
-            text: "texto sobre S3",
+            text: "O S3 (Simple Storage Service) é um serviço de armazenamento em nuvem que permite guardar e recuperar arquivos de forma escalável e segura. No sistema, ele é usado para armazenar documentos, imagens ou outros tipos de arquivos. O S3 funciona como um repositório de objetos, cada um identificado por uma chave única dentro de um bucket. Isso inclui:",
+            list:[
+              "Armazenamento de arquivos estáticos (documentos, imagens, PDFs, relatórios).",
+              "Alta disponibilidade e escalabilidade, permitindo lidar com grandes volumes de dados.",
+              "Controle de acesso e segurança, com permissões definidas por políticas de usuários e serviços.",
+              "Integração direta com o backend em Next.js, permitindo upload, download e gerenciamento de arquivos por meio de SDKs.",
+            ]
           },
         ],
       },

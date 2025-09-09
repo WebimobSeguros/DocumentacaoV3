@@ -89,9 +89,9 @@ export const processos: Processos = [
     },
     {
         id: 'resgates',
-        titulo: 'Resgates de Resgates',
+        titulo: 'Solicitação de Resgates',
         descricao: 'Envolve a solicitação pela imobiliária, o acompanhamento do setor operacional e a liquidação do pedido.',
-        arquivo_bpmn: 'resgates.bpmn',
+        arquivo_bpmn: 'solicitacao-resgate-cap.bpmn',
         arquivo_casos_de_uso: '',
         regras_de_negocio: [],
         atores: [
@@ -108,7 +108,7 @@ export const processos: Processos = [
         id: 'cancelamentos',
         titulo: 'Solicitação de Cancelamentos',
         descricao: 'Envolve a solicitação pela imobiliária, o acompanhamento do setor operacional e a efetivação do cancelamento.',
-        arquivo_bpmn: 'cancelamentos.bpmn',
+        arquivo_bpmn: 'solicitacao-cancelamento-seguro.bpmn',
         arquivo_casos_de_uso: '',
         regras_de_negocio: [],
         atores: [
