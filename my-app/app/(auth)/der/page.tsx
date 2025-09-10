@@ -12,7 +12,7 @@ export default function DER() {
                 src={'/der-webimob-v3-05-09-2025.pgerd.png'} />
 
                 {docs_skeleton.dados.sections.map((item, index) => (
-                    <div className="pt-16 text-2xl"
+                    <div className="pt-5 text-2xl"
                     key={index}>
                         <h1 className={'font-bold mb-1'}>
                             {item.title}
