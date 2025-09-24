@@ -2,7 +2,7 @@
 
 Este repositório centraliza toda a documentação da plataforma Webimob V3.
 
-[Website da Documentação](https://docs.webimob.com.br)
+[Acesse o Website da Documentação](https://docs.webimob.com.br)
 
 ---
 
