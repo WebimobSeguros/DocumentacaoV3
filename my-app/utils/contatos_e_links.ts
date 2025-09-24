@@ -47,7 +47,7 @@ export const contatos_e_links: ContatosELink = [
                 nome: 'Ellen Ingrid',
                 setor: 'Comercial',
                 numero: '+55 (31) 9322-0005',
-                email: '---',
+                email: 'ellen.ingrid@portoseguro.com.br',
                 anotacoes: 'Para emergências, chamados travados e dúvidas de produto.',
             },
             {
@@ -56,6 +56,20 @@ export const contatos_e_links: ContatosELink = [
                 numero: '---',
                 email: '---',
                 anotacoes: 'No Portal Dev. Para criação de chamados de TI.',
+            }, 
+            {
+                nome: 'Cristina Maciel',
+                setor: 'Comercial',
+                numero: '---',
+                email:  'cristina.maciel@portoseguro.com.br',
+                anotacoes: 'Para emergências, chamados travados e dúvidas de produto.',
+            }, 
+            {
+                nome: 'Felipe Borges',
+                setor: 'Comercial',
+                numero: '---',
+                email: 'felipe.borges@portoseguro.com.br',
+                anotacoes: 'Para emergências, chamados travados e dúvidas de produto.',
             }
         ]
     },
@@ -63,7 +77,7 @@ export const contatos_e_links: ContatosELink = [
         titulo: 'Pottencial',
         links: [
             {
-                titulo: 'Acesso Portal Coretor',
+                titulo: 'Acesso Portal Corretor',
                 link: 'https://parceiro.pottencial.com.br/login/autenticacao',
                 usuario: 'operacional@webimob.com.br',
                 senha: 'Webimob@2025',
@@ -90,7 +104,14 @@ export const contatos_e_links: ContatosELink = [
                 setor: 'TI',
                 numero: '---',
                 email: 'leandro.dourado@pottencial.com.br',
-                anotacoes: 'Atendimento. Ele recomendou que o primeiro contato fosse feito com a Central.',
+                anotacoes: 'Atendimento. Recomenda-se que o primeiro contato seja feito na central.',
+            }, 
+            {
+                nome: 'Anderson Vieira',
+                setor: 'Gerente Comercial',
+                numero: '---',
+                email: 'anderson.vieira@pottencial.com.br',
+                anotacoes: 'Atendimento. Recomenda-se que o primeiro contato seja feito na central.',
             }
         ]
     },
@@ -98,7 +119,7 @@ export const contatos_e_links: ContatosELink = [
         titulo: 'Too Seguros',
         links: [
             {
-                titulo: 'Acesso Portal Coretor',
+                titulo: 'Acesso Portal Corretor',
                 link: 'https://openapi-uat.tooseguros.com.br/keycloak/auth/realms/openid-backend-kube/protocol/openid-connect/auth?client_id=21a9fe739b33454f85df67f1f4559add&redirect_uri=https%3A%2F%2Fhml-portalparceiro.tooseguros.com.br%2Fsignin-callback&response_type=code&scope=openid+email+authorized_apps+profile&state=bd28a5a15634482caffb7eb46eabe265&code_challenge=gbCZPh3t6_KMdWdjOXakJpw4sfPsvQFaJeSprUtlmkA&code_challenge_method=S256',
                 usuario: '34156096000101',
                 senha: '@Webi2021',
