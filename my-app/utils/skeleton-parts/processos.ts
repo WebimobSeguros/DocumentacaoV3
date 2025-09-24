@@ -5,13 +5,7 @@ export type Processos = {
     arquivo_bpmn: string
     arquivo_casos_de_uso: string
     regras_de_negocio: string[]
-    atores: {
-        nome_ator: string,
-        casos_de_uso: {
-            titulo: string,
-            requisitos_funcionais: string[]
-        }[]
-    }[]
+    requisitos_funcionais: string[]
 }[]
 
 export const processos: Processos = [
@@ -24,16 +18,9 @@ export const processos: Processos = [
         regras_de_negocio: [
             'Uma cotação de Seguro Incêndio deve estar vinculada a exatamente uma seguradora sendo ela Porto Seguro ou Tokio Marine.',
         ],
-        atores: [
-            {
-                nome_ator: 'Usuário Imob / Webimob',
-                casos_de_uso: [{
-                    titulo: 'Calcular Orçamento',
-                    requisitos_funcionais: [
-                        'O sistema deve impedir a execução do cálculo caso algum campo obrigatório do formulário não esteja preenchido.'
-                    ]
-                }]
-            }
+
+        requisitos_funcionais: [
+            'O sistema deve impedir a execução do cálculo caso algum campo obrigatório do formulário não esteja preenchido.'
         ]
     },
     {
@@ -43,15 +30,7 @@ export const processos: Processos = [
         arquivo_bpmn: 'seguro-fianca.bpmn',
         arquivo_casos_de_uso: '',
         regras_de_negocio: [],
-        atores: [
-            {
-                nome_ator: '',
-                casos_de_uso: [{
-                    titulo: '',
-                    requisitos_funcionais: []
-                }]
-            }
-        ]
+        requisitos_funcionais: []
     },
     {
         id: 'titulo-capitalizacao',
@@ -60,15 +39,7 @@ export const processos: Processos = [
         arquivo_bpmn: 'titulo-capitalizacao.bpmn',
         arquivo_casos_de_uso: '',
         regras_de_negocio: [],
-        atores: [
-            {
-                nome_ator: '',
-                casos_de_uso: [{
-                    titulo: '',
-                    requisitos_funcionais: []
-                }]
-            }
-        ]
+        requisitos_funcionais: []
     },
     {
         id: 'sinistros',
@@ -77,15 +48,7 @@ export const processos: Processos = [
         arquivo_bpmn: 'solicitacao-abertura-sinistro-seguro.bpmn',
         arquivo_casos_de_uso: '',
         regras_de_negocio: [],
-        atores: [
-            {
-                nome_ator: '',
-                casos_de_uso: [{
-                    titulo: '',
-                    requisitos_funcionais: []
-                }]
-            }
-        ]
+        requisitos_funcionais: []
     },
     {
         id: 'resgates',
@@ -94,15 +57,7 @@ export const processos: Processos = [
         arquivo_bpmn: 'solicitacao-resgate-cap.bpmn',
         arquivo_casos_de_uso: '',
         regras_de_negocio: [],
-        atores: [
-            {
-                nome_ator: '',
-                casos_de_uso: [{
-                    titulo: '',
-                    requisitos_funcionais: []
-                }]
-            }
-        ]
+        requisitos_funcionais: []
     },
     {
         id: 'cancelamentos',
@@ -111,14 +66,6 @@ export const processos: Processos = [
         arquivo_bpmn: 'solicitacao-cancelamento-seguro.bpmn',
         arquivo_casos_de_uso: '',
         regras_de_negocio: [],
-        atores: [
-            {
-                nome_ator: '',
-                casos_de_uso: [{
-                    titulo: '',
-                    requisitos_funcionais: []
-                }]
-            }
-        ]
+        requisitos_funcionais: []
     },
 ]

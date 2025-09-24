@@ -150,7 +150,7 @@ export const contatos_e_links: ContatosELink = [
                 titulo: 'Acesso Portal Desenvolvedor',
                 link: 'https://ssoportais3.tokiomarine.com.br/openam/XUI/?realm=TOKIOLFR&goto=http://portalparceiros.tokiomarine.com.br/#login/',
                 usuario: '13800975688',
-                senha: '@#$Tokio25',
+                senha: '@1Webimob',
                 anotacoes: 'Documentação (Incêndio e Fiança)',
             },
         ],
