@@ -1,0 +1,403 @@
+type: collection.insomnia.rest/5.0
+name: Too
+meta:
+  id: wrk_581619cba64d4f86b2eeb3d1a40c5857
+  created: 1758641487498
+  modified: 1758641487498
+  description: ""
+collection:
+  - url: "{{ _.TOO_URL }}/authentication"
+    name: Auth
+    meta:
+      id: req_6890ca7363ce4d6eae4a100174814e4d
+      created: 1758650086886
+      modified: 1758650199337
+      isPrivate: false
+      description: ""
+      sortKey: -1758650086886
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_f08e0ac56d3f49599176a6fbdb361479
+          name: grant_type
+          value: client_credentials
+          description: ""
+          disabled: false
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+      - name: User-Agent
+        value: insomnia/11.6.1
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: "{{ _.TOO_CLIENT_ID }}"
+      password: "{{ _.TOO_CLIENT_SECRET }}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.TOO_URL }}/fianca/proposta/ficha"
+    name: Criar Ficha
+    meta:
+      id: req_ff3473b6105f441da3a01ebbcea85329
+      created: 1758650201684
+      modified: 1758726797991
+      isPrivate: false
+      description: ""
+      sortKey: -1758650201684
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "cnpjCorretor": "34156096000101",
+            "razaoSocialCorretor": "WEBIMOB CORRETORA DE SEGUROS LTDA",
+            "pretendentes": [
+                {
+                    "nome": "JEFFERSON SOARES DE AVELAR",
+                    "cpf": "95004653615",
+                    "dataNascimento": "1975-01-10",
+                    "residiraImovel": true,
+                    "responsavelFinanceiroPeloImovel": true,
+                    "rendaFixaMensal": 10000.00,
+                    "vinculoEmpregaticio": "Clt",
+                    "profissao": "Analista"
+                }
+            ],
+            "locacao": {
+                "finalidadeLocacao": "Residencial",
+                "cep": "37130836",
+                "logradouro": "Rua Antônio do Rosário Maia",
+                "numero": "131",
+                "complemento": "",
+                "bairro": "Jardim Aeroporto II",
+                "cidade": "Alfenas",
+                "uf": "MG"
+            },
+            "coberturas": {
+                "valorAluguel": 500.00,
+                "valorAgua": 15.50,
+                "valorCondominio": 15.50,
+                "valorGas": 15.50,
+                "valorIptu": 15.50,
+                "valorLuz": 15.50,
+                "valorDanosAoImovel": 500.00,
+                "valorDanosAMoveis": 500.00,
+                "valorMultasContratuais": 0,
+                "valorPinturaExterna": 0,
+                "valorPinturaInterna": 0
+            }
+        } 
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_d4eabb8732de42d4ac6dfb326a5f17e7
+      - name: User-Agent
+        value: insomnia/11.6.1
+        id: pair_ec0ee3fb08c548c9a94dd5001e83ce95
+      - id: pair_dd14290b090744ab9660c50af2c4c586
+        name: ClientId
+        value: "{{ _.TOO_CLIENT_ID }}"
+        description: ""
+        disabled: false
+      - id: pair_69503dc85b904ae78cdadb62fddd9758
+        name: ClientSecret
+        value: "{{ _.TOO_CLIENT_SECRET }}"
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      prefix: Bearer
+      token: "{% response 'body', 'req_6890ca7363ce4d6eae4a100174814e4d',
+        '$.access_token', 'when-expired', 3600 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.TOO_URL }}/fianca/apolice/1074600160430/pdf"
+    name: PDF - Apólice
+    meta:
+      id: req_5967ef619e9f4afeb5ee5e9b0c1832cb
+      created: 1758719648975
+      modified: 1758721432341
+      isPrivate: false
+      description: ""
+      sortKey: -1758650144285
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+        id: pair_00992c65e4854c84afce596da45fee54
+      - id: pair_0ba8e5a2e8b3438aae1f9c0b284cb39d
+        name: ClientId
+        value: "{{ _.TOO_CLIENT_ID }}"
+        description: ""
+        disabled: false
+      - id: pair_b13f9fbf349a468ab42a4de7415c60f4
+        name: ClientSecret
+        value: "{{ _.TOO_CLIENT_SECRET }}"
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      prefix: Bearer
+      token: "{% response 'body', 'req_6890ca7363ce4d6eae4a100174814e4d',
+        '$.access_token', 'when-expired', 3600 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.TOO_URL }}/fianca/credito/03403380831/250924346000166/parecer"
+    name: PDF - Carta de Crédito
+    meta:
+      id: req_6e0dab9675a141a2bf27c94d46475099
+      created: 1758719983826
+      modified: 1758720423047
+      isPrivate: false
+      description: ""
+      sortKey: -1758650115585.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+        id: pair_00992c65e4854c84afce596da45fee54
+      - id: pair_0ba8e5a2e8b3438aae1f9c0b284cb39d
+        name: ClientId
+        value: "{{ _.TOO_CLIENT_ID }}"
+        description: ""
+        disabled: false
+      - id: pair_b13f9fbf349a468ab42a4de7415c60f4
+        name: ClientSecret
+        value: "{{ _.TOO_CLIENT_SECRET }}"
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      prefix: Bearer
+      token: "{% response 'body', 'req_6890ca7363ce4d6eae4a100174814e4d',
+        '$.access_token', 'when-expired', 3600 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.TOO_URL }}/fianca/credito/95004653615/250924346001112/analisar"
+    name: Enviar Ficha
+    meta:
+      id: req_b335c0c3c77e45a8a49c50daa165642d
+      created: 1758721456940
+      modified: 1758726105828
+      isPrivate: false
+      description: ""
+      sortKey: -1758650201784
+    method: POST
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+        id: pair_ec0ee3fb08c548c9a94dd5001e83ce95
+      - id: pair_dd14290b090744ab9660c50af2c4c586
+        name: ClientId
+        value: "{{ _.TOO_CLIENT_ID }}"
+        description: ""
+        disabled: false
+      - id: pair_69503dc85b904ae78cdadb62fddd9758
+        name: ClientSecret
+        value: "{{ _.TOO_CLIENT_SECRET }}"
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      prefix: Bearer
+      token: "{% response 'body', 'req_6890ca7363ce4d6eae4a100174814e4d',
+        '$.access_token', 'when-expired', 3600 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.TOO_URL }}/fianca/proposta/cotacao"
+    name: Solicitar Cotação
+    meta:
+      id: req_19ef6a2a80ca407f9ee2a10ade709db3
+      created: 1758722131038
+      modified: 1758726759873
+      isPrivate: false
+      description: ""
+      sortKey: -1758650201884
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"cnpjCorretor": "34156096000101",
+        	"razaoSocialCorretor": "WEBIMOB CORRETORA DE SEGUROS LTDA",
+        	"numeroFicha": 250924346000782,
+        	"inicioVigenciaContratoLocacao": "2025-09-26",
+        	"finalVigenciaContratoLocacao": "2028-03-26",
+        	"indiceDeReajusteAluguel": "IGP_M",
+        	"periodoIndenitario": 30,
+        	"percentualComissao": 10
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.1
+        id: pair_ec0ee3fb08c548c9a94dd5001e83ce95
+      - id: pair_dd14290b090744ab9660c50af2c4c586
+        name: ClientId
+        value: "{{ _.TOO_CLIENT_ID }}"
+        description: ""
+        disabled: false
+      - id: pair_69503dc85b904ae78cdadb62fddd9758
+        name: ClientSecret
+        value: "{{ _.TOO_CLIENT_SECRET }}"
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      prefix: Bearer
+      token: "{% response 'body', 'req_6890ca7363ce4d6eae4a100174814e4d',
+        '$.access_token', 'when-expired', 3600 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.TOO_URL }}/fianca/proposta/formaspagamento/3552684"
+    name: Solicitar Formas de Pagamento
+    meta:
+      id: req_8ddb7e14b7d44a498fcfb81211cb2de1
+      created: 1758724000731
+      modified: 1758726536284
+      isPrivate: false
+      description: ""
+      sortKey: -1758650201984
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+        id: pair_ec0ee3fb08c548c9a94dd5001e83ce95
+      - id: pair_dd14290b090744ab9660c50af2c4c586
+        name: ClientId
+        value: "{{ _.TOO_CLIENT_ID }}"
+        description: ""
+        disabled: false
+      - id: pair_69503dc85b904ae78cdadb62fddd9758
+        name: ClientSecret
+        value: "{{ _.TOO_CLIENT_SECRET }}"
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      prefix: Bearer
+      token: "{% response 'body', 'req_6890ca7363ce4d6eae4a100174814e4d',
+        '$.access_token', 'when-expired', 3600 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.TOO_URL }}/fianca/apolice/1074600160430"
+    name: JSON - Apólice
+    meta:
+      id: req_68398f8dc67e4fa38a2f704f952eaaed
+      created: 1758728438325
+      modified: 1758728638907
+      isPrivate: false
+      description: ""
+      sortKey: -1758650129935.25
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+        id: pair_00992c65e4854c84afce596da45fee54
+      - id: pair_c6ca41200df14f668c9b10fa32f1621e
+        name: ClientId
+        value: "{{ _.TOO_CLIENT_ID }}"
+        description: ""
+        disabled: false
+      - id: pair_1603151e7fdb4e13ba2b79fd2e26a72a
+        name: ClientSecret
+        value: "{{ _.TOO_CLIENT_SECRET }}"
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      prefix: Bearer
+      token: "{% response 'body', 'req_6890ca7363ce4d6eae4a100174814e4d',
+        '$.access_token', 'when-expired', 3600 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_a30cf640a3c5f56913dbfb8767c7f254f6f56edb
+    created: 1758641487513
+    modified: 1758728646740
+  cookies:
+    - key: KC_RESTART
+      maxAge: 0
+      domain: open-api.tooseguros.com.br
+      path: /keycloak/auth/realms/openid-backend-kube/
+      httpOnly: true
+      extensions:
+        - Version=1
+      hostOnly: true
+      creation: 2025-09-23T17:56:32.926Z
+      lastAccessed: 2025-09-24T15:44:06.740Z
+      id: 611ed67e-4515-448a-a11b-23ebbbb1c867
+    - key: KC_AUTH_STATE
+      maxAge: 0
+      domain: open-api.tooseguros.com.br
+      path: /auth/realms/openid-backend-kube/
+      extensions:
+        - Version=1
+      hostOnly: true
+      creation: 2025-09-23T17:56:32.926Z
+      lastAccessed: 2025-09-24T15:44:06.740Z
+      id: 108b7bcd-444b-4aa7-a6b2-a4acee17582a
+environments:
+  name: Too Environment
+  meta:
+    id: env_a30cf640a3c5f56913dbfb8767c7f254f6f56edb
+    created: 1758641487512
+    modified: 1758650132207
+    isPrivate: false
+  data:
+    TOO_URL: https://open-api.tooseguros.com.br
+    TOO_CLIENT_ID: 261285cbaba7440e88dbb668239c0d56
+    TOO_CLIENT_SECRET: fd798c4b30d046d485e39f1c9752f658

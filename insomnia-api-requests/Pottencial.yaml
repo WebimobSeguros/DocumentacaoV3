@@ -1,0 +1,165 @@
+type: collection.insomnia.rest/5.0
+name: Pottencial
+meta:
+  id: wrk_b0bee38e13ea4e8b928e76f0459c6f72
+  created: 1758641425728
+  modified: 1758641425728
+  description: ""
+collection:
+  - url: "{{ _.POTTENCIAL_URL }}/oauth/v3/access-token"
+    name: Auth
+    meta:
+      id: req_45cde9b530ac4fe38f8756c60a6cafd8
+      created: 1758644550051
+      modified: 1758644833077
+      isPrivate: false
+      description: ""
+      sortKey: -1758644550051
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+        	"grant_type": "authorization_code",
+          "scope": "customers.read customers.write plans.read plans.write transactions.read transactions.write webhooks.write cards.read cards.write card-brands.read subscriptions.read subscriptions.write charges.read charges.write boletos.read",
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.1
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: "{{ _.POTTENCIAL_CLIENT_ID }}"
+      password: "{{ _.POTTENCIAL_CLIENT_SECRET }}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.POTTENCIAL_URL
+      }}/onboarding/v1/persons/fianca-locaticia-mensalizado-pf/13800975688/cred\
+      it-limit"
+    name: Limite
+    meta:
+      id: req_e6080d44d293498094a1b34cb236a4b0
+      created: 1758644841129
+      modified: 1758649757543
+      isPrivate: false
+      description: ""
+      sortKey: -1758644841129
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+        id: pair_c2c15ec2f5734507a88c6d762b0b2601
+      - id: pair_20fd6aa3022a470385a3068f7a18327e
+        name: access_token
+        value: "{% response 'body', 'req_45cde9b530ac4fe38f8756c60a6cafd8',
+          '$.access_token', 'when-expired', 3600 %}"
+        description: ""
+        disabled: false
+      - id: pair_550f263f895b49b9a4bbf588bd7a0504
+        name: client_id
+        value: "{{ _.POTTENCIAL_CLIENT_ID }}"
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.POTTENCIAL_URL
+      }}/policiesmanagement/v1/policies/document?policyNumber=03069202599074605\
+      09857000"
+    name: GetApolicePDF
+    meta:
+      id: req_521ca80f4c8f4f92a42b21b16318066c
+      created: 1758649782336
+      modified: 1758649890364
+      isPrivate: false
+      description: ""
+      sortKey: -1758649782336
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+        id: pair_207071a871ad43f7860179642ab42137
+      - id: pair_d60b8973b67a49b3a9b5c34e2fd1b379
+        name: client_id
+        value: "{{ _.POTTENCIAL_CLIENT_ID }}"
+        description: ""
+        disabled: false
+      - id: pair_041478ae813a46fda298b20a7cbcebe6
+        name: access_token
+        value: "{% response 'body', 'req_45cde9b530ac4fe38f8756c60a6cafd8',
+          '$.access_token', 'when-expired', 3600 %}"
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.POTTENCIAL_URL
+      }}/policiesmanagement/v1/policies?policyNumber=0306920259907460509857000"
+    name: GetApolice
+    meta:
+      id: req_f4419b5fc73e483599c3fb01b99df57e
+      created: 1758649904564
+      modified: 1758649912076
+      isPrivate: false
+      description: ""
+      sortKey: -1758647311732.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+        id: pair_207071a871ad43f7860179642ab42137
+      - id: pair_d60b8973b67a49b3a9b5c34e2fd1b379
+        name: client_id
+        value: "{{ _.POTTENCIAL_CLIENT_ID }}"
+        description: ""
+        disabled: false
+      - id: pair_041478ae813a46fda298b20a7cbcebe6
+        name: access_token
+        value: "{% response 'body', 'req_45cde9b530ac4fe38f8756c60a6cafd8',
+          '$.access_token', 'when-expired', 3600 %}"
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_db139a4dde7ae3aa0c1f78e52f197d2c9a4d3a5b
+    created: 1758641425738
+    modified: 1758641425738
+environments:
+  name: Pottencial Environment
+  meta:
+    id: env_db139a4dde7ae3aa0c1f78e52f197d2c9a4d3a5b
+    created: 1758641425737
+    modified: 1758644596296
+    isPrivate: false
+  data:
+    POTTENCIAL_URL: https://api.pottencial.com.br
+    POTTENCIAL_CLIENT_ID: ff19b13d-e72d-47b4-9c11-7426da124e00
+    POTTENCIAL_CLIENT_SECRET: beeb296f-1043-420b-8670-4890d8f928c2

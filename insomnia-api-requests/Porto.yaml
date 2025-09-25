@@ -1,0 +1,425 @@
+type: collection.insomnia.rest/5.0
+name: Porto
+meta:
+  id: wrk_5016a6881734494cb0bafdc90df4a957
+  created: 1758638017904
+  modified: 1758641505215
+  description: ""
+collection:
+  - name: Auth
+    meta:
+      id: fld_cbdee12f35bb4867b6a42aae8e058419
+      created: 1758638312354
+      modified: 1758638312354
+      sortKey: -1758638312355
+      description: ""
+    children:
+      - url: "{{ _.PORTO_URL_CLOUD }}/oauth/v2/access-token"
+        name: Auth Porto - Env Fiança
+        meta:
+          id: req_ad5725ae195b44758d2ffff8074458ec
+          created: 1758638315287
+          modified: 1758734112412
+          isPrivate: false
+          description: ""
+          sortKey: -1758638315287
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"grant_type": "client_credentials"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+            id: pair_5eea1cacc17442e4b6c5e2911980d407
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{{ _.PORTO_CLIENT_ID }}"
+          password: "{{ _.PORTO_CLIENT_SECRET }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.PORTO_URL }}/oauth/v2/access-token"
+        name: Auth Porto - Env Incêndio
+        meta:
+          id: req_6fe0007a685f4dc1a960d1d688c2f2e6
+          created: 1758727983390
+          modified: 1758734118526
+          isPrivate: false
+          description: ""
+          sortKey: -1757865879219
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"grant_type": "client_credentials"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+            id: pair_5eea1cacc17442e4b6c5e2911980d407
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: "{{ _.PORTO_CLIENT_ID }}"
+          password: "{{ _.PORTO_CLIENT_SECRET }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Incêndio
+    meta:
+      id: fld_ae14d48920474eef8eb20b65e3180014
+      created: 1758639366670
+      modified: 1758728030452
+      sortKey: -1758639366670
+      description: ""
+    children:
+      - url: "{{ _.PORTO_URL
+          }}/imobiliaria/emissao/seguro-incendio/v1/propostas/1185506136/{{
+          _.PORTO_SUSEP }}/situacao"
+        name: Verificar Situação da Proposta
+        meta:
+          id: req_eb03bbb7192f41fb9b94753b20163bf0
+          created: 1758640271186
+          modified: 1758728006710
+          isPrivate: false
+          description: ""
+          sortKey: -1758640271186
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          prefix: Bearer
+          token: "{% response 'body', 'req_6fe0007a685f4dc1a960d1d688c2f2e6',
+            '$.access_token', 'when-expired', 3600 %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.PORTO_URL
+          }}/imobiliaria/emissao/seguro-incendio/v1/apolices/101140600463082300\
+          00/{{ _.PORTO_SUSEP }}/conteudo-arquivo"
+        name: PDF - Apólice
+        meta:
+          id: req_faa732703bab4b9faac9a1e3b8eff19b
+          created: 1758654063535
+          modified: 1758728207156
+          isPrivate: false
+          description: ""
+          sortKey: -1758640271286
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+            id: pair_0ce7a02081c34bdab9263f0912d1eabb
+          - id: pair_92fb4d46d4d24594952b4f47cdae4698
+            name: Content-type
+            value: application/json
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          prefix: Bearer
+          token: "{% response 'body', 'req_6fe0007a685f4dc1a960d1d688c2f2e6',
+            '$.access_token', 'when-expired', 3600 %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Fiança
+    meta:
+      id: fld_75fdb2ae3ea54771b6ffdf5a3fb73956
+      created: 1758639373603
+      modified: 1758639373603
+      sortKey: -1758639373603
+      description: ""
+    children:
+      - url: "{{ _.PORTO_URL_CLOUD
+          }}/fianca-locaticia/emissao/aluguel-essencial/v1/apolices/00000000085\
+          3379/0000/{{ _.PORTO_SUSEP }}"
+        name: JSON - Apólice
+        meta:
+          id: req_9f9bb02097624274a3ebd84d7acdbbb8
+          created: 1758727165955
+          modified: 1758733883380
+          isPrivate: false
+          description: ""
+          sortKey: -1758727023129
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+            id: pair_0ce7a02081c34bdab9263f0912d1eabb
+          - id: pair_92fb4d46d4d24594952b4f47cdae4698
+            name: Content-type
+            value: application/json
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          prefix: Bearer
+          token: "{% response 'body', 'req_ad5725ae195b44758d2ffff8074458ec',
+            '$.access_token', 'when-expired', 3600 %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.PORTO_URL_CLOUD
+          }}/fianca-locaticia/emissao/aluguel-essencial/v1/apolices/00000001074\
+          9635/0000/{{ _.PORTO_SUSEP }}/pdf"
+        name: PDF - Apólice
+        meta:
+          id: req_bf8b5965678f4b3c983de379c2e52f69
+          created: 1758728221057
+          modified: 1758734130714
+          isPrivate: false
+          description: ""
+          sortKey: -1758688612556.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+            id: pair_0ce7a02081c34bdab9263f0912d1eabb
+          - id: pair_92fb4d46d4d24594952b4f47cdae4698
+            name: Content-type
+            value: application/json
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          prefix: Bearer
+          token: "{% response 'body', 'req_ad5725ae195b44758d2ffff8074458ec',
+            '$.access_token', 'when-expired', 3600 %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Cap
+    meta:
+      id: fld_9d6a6441a4e34570aa6f764a1b854b22
+      created: 1758639378732
+      modified: 1758639378732
+      sortKey: -1758639378732
+      description: ""
+    children:
+      - url: "{{ _.PORTO_URL }}/riscos-financeiros/capitalizacao/v1/emissoes/propostas"
+        name: Verificar Situação da Proposta
+        meta:
+          id: req_eedeca96f41149bab8547d736e23c0fe
+          created: 1758639847167
+          modified: 1758647540127
+          isPrivate: false
+          description: ""
+          sortKey: -1758639847167
+        method: GET
+        parameters:
+          - id: pair_ef708d0e0e354f49b70965d96e194c1e
+            name: nr_proposta_tr
+            value: "534556801"
+            description: ""
+            disabled: false
+          - id: pair_f7d476e5653f4cc78e54c3578edf7a55
+            name: nr_susep
+            value: "{{ _.PORTO_SUSEP }}"
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          prefix: Bearer
+          token: "{% response 'body', 'req_ad5725ae195b44758d2ffff8074458ec',
+            '$.access_token', 'when-expired', 3600 %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c30f690ed08f5c08e20049fb55646e620ec3ef65
+    created: 1758638017909
+    modified: 1758734139027
+  cookies:
+    - key: nlbi_2574372
+      value: RPW0LrxUpzwcDZobfEIVswAAAAD91uV0YMR4OruQwMDz56f2
+      domain: portoseguro.com.br
+      path: /
+      httpOnly: true
+      hostOnly: false
+      creation: 2025-09-23T14:50:51.303Z
+      lastAccessed: 2025-09-24T15:33:33.424Z
+      id: 8c8ff13f-3e2c-4bab-a72b-e89b91084f0d
+    - key: visid_incap_2574372
+      value: eyDegA5nS3u+RbO7uBQ9E9km1GgAAAAAQUIPAAAAAAA7tc+LvBvB+wVtWoHl54Xp
+      domain: portoseguro.com.br
+      path: /
+      httpOnly: true
+      hostOnly: false
+      creation: 2025-09-23T14:50:51.307Z
+      lastAccessed: 2025-09-24T17:14:04.265Z
+      id: dfd8536b-5d20-4c4b-89d2-a21cac2f578a
+    - key: incap_ses_1621_2574372
+      value: GjmfZctnCU65eNIsUvN+Ftsm1GgAAAAAIVp4/Euy4TdKD2UnA/fjwA==
+      domain: portoseguro.com.br
+      path: /
+      hostOnly: false
+      creation: 2025-09-23T14:50:51.308Z
+      lastAccessed: 2025-09-24T17:14:04.265Z
+      id: 164ac301-ddb1-4356-ad73-3b55cd108b81
+    - key: 4482c3240c3b6eaeae478551684f3be3
+      value: 34a4f992f181b0bc19a6fcee94e57ebe
+      domain: portoapi.portoseguro.com.br
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-09-23T14:55:51.321Z
+      lastAccessed: 2025-09-24T15:33:13.849Z
+      sameSite: none
+      id: 9b4bcd19-b3e4-4bb1-a009-2e0a411feb45
+    - key: 6046505a9c818ae3b42173851818407d
+      value: c8a79a0e94f3ecff33740ec2c7bacf0e
+      domain: portoapi.portoseguro.com.br
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-09-23T14:55:51.322Z
+      lastAccessed: 2025-09-24T15:36:26.707Z
+      sameSite: none
+      id: 5f7b5485-d97c-4d24-b8a2-f27bf4b2e6c9
+    - key: incap_ses_8226_2574372
+      value: TUkxQN/iRAtP4xgw0Z8ockvu0mgAAAAAPUX6bBh10v0EQ/+m2mXBRA==
+      domain: portoseguro.com.br
+      path: /
+      hostOnly: false
+      creation: 2025-09-23T18:31:57.188Z
+      lastAccessed: 2025-09-23T19:00:25.972Z
+      id: 4d409d10-1d95-4e77-9550-ecbca5e7b49f
+    - key: incap_ses_9084_2574372
+      value: yHdkRUA6bCCc2YRzRdoQfsjo02gAAAAAoF9yoeFzkb6AlV5yZV+mwA==
+      domain: portoseguro.com.br
+      path: /
+      hostOnly: false
+      creation: 2025-09-24T12:49:13.919Z
+      lastAccessed: 2025-09-24T12:49:13.919Z
+      id: c2bcef9b-d002-4d0c-8398-c9d9d03f6cff
+    - key: incap_ses_1697_2574372
+      value: bWC2A5aL5mTLtFTpvvSMF/wM1GgAAAAAk/yG0Er3syMz+b+77Y0T7g==
+      domain: portoseguro.com.br
+      path: /
+      hostOnly: false
+      creation: 2025-09-24T15:23:41.224Z
+      lastAccessed: 2025-09-24T15:23:41.224Z
+      id: 78f1848d-e45d-4a77-94f9-d91b6bfbad70
+    - key: visid_incap_2683399
+      value: R/G5mNizR6y8aZWd8H7zvDwm1GgAAAAAQUIPAAAAAAAMLf6lv4X/EqSahCCaWKN9
+      domain: portoseguro.com.br
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: false
+      creation: 2025-09-24T15:26:30.892Z
+      lastAccessed: 2025-09-24T17:15:39.026Z
+      sameSite: none
+      id: 696b5fab-8950-488b-a75b-61b455c4704b
+    - key: nlbi_2683399
+      value: tH3XOddLgF8ILRDOiFYFdgAAAACDnzx4wtqSSuWW9ApPp+Jr
+      domain: portoseguro.com.br
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: false
+      creation: 2025-09-24T15:26:30.892Z
+      lastAccessed: 2025-09-24T15:26:30.892Z
+      sameSite: none
+      id: db09ba50-52c3-4ce6-9fe7-c6f20a232495
+    - key: incap_ses_1696_2683399
+      value: qLR+UfkMLzmsJ0o7VWeJF6YN1GgAAAAAIApedW29EW4o01gBeUFqCA==
+      domain: portoseguro.com.br
+      path: /
+      secure: true
+      hostOnly: false
+      creation: 2025-09-24T15:26:30.892Z
+      lastAccessed: 2025-09-24T15:26:30.892Z
+      sameSite: none
+      id: 5d904e9b-d645-4f59-8fed-f9144b57dae6
+    - key: incap_ses_1697_2683399
+      value: fkbFTLlQUHgIXl7pvvSMFykQ1GgAAAAA28aWhfg5pUKw8O1riU221g==
+      domain: portoseguro.com.br
+      path: /
+      secure: true
+      hostOnly: false
+      creation: 2025-09-24T15:37:14.551Z
+      lastAccessed: 2025-09-24T15:37:14.551Z
+      sameSite: none
+      id: fde57a34-f4f5-4010-acf4-bb9a584b0e92
+    - key: incap_ses_1621_2683399
+      value: cmqhBKnapQ+SwNEsUvN+FkAm1GgAAAAA8eDg1aAoiD+BTJRYppk9XA==
+      domain: portoseguro.com.br
+      path: /
+      secure: true
+      hostOnly: false
+      creation: 2025-09-24T17:11:28.681Z
+      lastAccessed: 2025-09-24T17:11:28.681Z
+      sameSite: none
+      id: 6ba25a27-b000-4efb-8dc1-4a54e4591873
+environments:
+  name: Porto Environment
+  meta:
+    id: env_c30f690ed08f5c08e20049fb55646e620ec3ef65
+    created: 1758638017907
+    modified: 1758638968253
+    isPrivate: false
+  data:
+    PORTO_URL: https://portoapi.portoseguro.com.br
+    PORTO_URL_CLOUD: https://portoapicloud.portoseguro.com.br
+    PORTO_CLIENT_ID: 0224f143-8ab8-474b-b179-9a6060e0fede
+    PORTO_CLIENT_SECRET: 448cb4de-a473-49b1-9d45-17281284527c
+    PORTO_SUSEP: R4GK9J
+    PORTO_SUSEP_FIANCA: TST01J
+    PORTO_CODIGO_CANAL: "68"

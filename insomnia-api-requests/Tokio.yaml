@@ -1,0 +1,296 @@
+type: collection.insomnia.rest/5.0
+name: Tokio
+meta:
+  id: wrk_4877372086714f89bc46f29d2947b9f1
+  created: 1758638610462
+  modified: 1758641498028
+  description: ""
+collection:
+  - name: Fiança
+    meta:
+      id: fld_fb0d831a22494b7c869ef7095d7ff77f
+      created: 1758641684478
+      modified: 1758641684478
+      sortKey: -1758641684478
+      description: ""
+    children:
+      - url: "{{ _.TOKIO_URL_AUTH_FIANCA }}"
+        name: Auth Fiança
+        meta:
+          id: req_c1ec1fb5a7a6476a95e53c35d692fb7c
+          created: 1758641686642
+          modified: 1758644740301
+          isPrivate: false
+          description: ""
+          sortKey: -1758641686642
+        method: POST
+        body:
+          mimeType: application/x-www-form-urlencoded
+          params:
+            - name: grant_type
+              value: client_credentials
+              id: pair_47f430f2b5f549f68a07db9d98618e50
+            - id: pair_c97eb5ce233b4299bd3fc6893611dc46
+              name: client_id
+              value: "{{ _.TOKIO_CLIENT_ID_FIANCA }}"
+              description: ""
+              disabled: false
+            - id: pair_b05d58eb7f664dbdbcf62f00e8788f11
+              name: client_secret
+              value: "{{ _.TOKIO_CLIENT_SECRET_FIANCA }}"
+              description: ""
+              disabled: false
+            - id: pair_ff2c67556d344ca0b576ed23c2613163
+              name: scope
+              value: "{{ _.TOKIO_SCOPE_FIANCA }}"
+              description: ""
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: application/x-www-form-urlencoded
+          - name: User-Agent
+            value: insomnia/11.6.1
+            id: pair_8350a458c7a74402b0cdbdb38a5712e0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Incêndio
+    meta:
+      id: fld_3127148a85044f96bb00ed8749358292
+      created: 1758642375059
+      modified: 1758718252284
+      sortKey: -1758642375059
+      description: ""
+    children:
+      - url: "{{ _.TOKIO_URL_INCENDIO }}/TmsWS/Imobiliaria/servicos/cotacaoOnline"
+        name: Orçamento
+        meta:
+          id: req_e45a97a230d44020bd47b38d9597622e
+          created: 1758642394573
+          modified: 1758642549022
+          isPrivate: false
+          description: ""
+          sortKey: -1758642394573
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+            id: pair_068eaa2917484915a9c95b9bd133ad70
+          - id: pair_87562e8edf8d42f5b5e7fe195c271e90
+            name: codigoCorretor
+            value: "{{ _.TOKIO_CODIGO_CORRETOR }}"
+            description: ""
+            disabled: false
+          - id: pair_1d3a2eedf2fa4526ba86e73af4d343ac
+            name: senhaOperadora
+            value: "{{ _.TOKIO_SENHA_INCENDIO }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.TOKIO_URL_INCENDIO }}/TmsWS/Imobiliaria/servicos/recuperarApolice"
+        name: Verificar Situação da Proposta
+        meta:
+          id: req_13e17b8df1214837820bf463cb1745c3
+          created: 1758652455127
+          modified: 1758745479401
+          isPrivate: false
+          description: ""
+          sortKey: -1758642394673
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	    "cdImobiliaria": "643868",
+                  "cdImovel": "65217"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+            id: pair_ebb1877e5fa94b2599301c1a2edcc5ac
+          - id: pair_b9eb25eb434e4a35a48cb0ea087f4340
+            name: codigoCorretor
+            value: "{{ _.TOKIO_CODIGO_CORRETOR }}"
+            description: ""
+            disabled: false
+          - id: pair_b42e7c625be742e3a260eb5c7e24c504
+            name: senhaOperadora
+            value: "{{ _.TOKIO_SENHA_INCENDIO }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Gestão de Carteira
+    meta:
+      id: fld_8b1802beb26642e9a38e58e4c3a7a6d7
+      created: 1758736050381
+      modified: 1758736050381
+      sortKey: -1758736050381
+      description: ""
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c1205405dc8aec13ffe7daf18961fc97afbf2a9b
+    created: 1758638610475
+    modified: 1758736342719
+  cookies:
+    - key: fpc
+      value: AmXECXTaLUNOvaHiKUkGkT5Wri-dAQAAABngZeAOAAAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-09-23T15:37:03.324Z
+      lastAccessed: 2025-09-24T12:50:33.863Z
+      sameSite: none
+      id: 8de4455d-9f7a-4973-b2cb-1a8f33fee7bc
+    - key: x-ms-gateway-slice
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-09-23T15:37:03.324Z
+      lastAccessed: 2025-09-24T12:50:33.864Z
+      sameSite: none
+      id: 92ead7d3-421f-4c44-a288-b0d7f495a029
+    - key: stsservicecookie
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-09-23T15:37:03.324Z
+      lastAccessed: 2025-09-23T15:37:03.324Z
+      sameSite: none
+      id: 67684261-b4d5-434e-8d24-a3d98d7693b9
+    - key: visid_incap_2875879
+      value: QFViqHsVQpWel8gGYh6kL9Yv1GgAAAAAQUIPAAAAAAC2XBsalfnUSmxoYcHXi3Lz
+      domain: tokiomarine.com.br
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: false
+      creation: 2025-09-23T15:48:04.134Z
+      lastAccessed: 2025-09-24T17:52:22.718Z
+      sameSite: none
+      id: 9e5e054a-d7a2-41ca-890a-0f24f72afb90
+    - key: nlbi_2875879
+      value: hZCOZbeU6mURj0vVaxyWGgAAAABqWoR6y7meDzU40K46Ww2O
+      domain: tokiomarine.com.br
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: false
+      creation: 2025-09-23T15:48:04.134Z
+      lastAccessed: 2025-09-24T17:52:22.719Z
+      sameSite: none
+      id: 468cf3e9-b25a-4b3e-a630-5446bb584028
+    - key: incap_ses_1620_2875879
+      value: JEOKW/7TGTDptN+F02V7FhHK0mgAAAAAJnu3Azr8QTrSoia5S70H6g==
+      domain: tokiomarine.com.br
+      path: /
+      secure: true
+      hostOnly: false
+      creation: 2025-09-23T15:48:04.134Z
+      lastAccessed: 2025-09-23T16:25:53.260Z
+      sameSite: none
+      id: de3f5a4e-5882-4d5f-8087-dcdf0c7da5ee
+    - key: incap_ses_8226_2875879
+      value: u69vQS97URs6vA0w0Z8ocubp0mgAAAAAi0+zQmyF63+DFJGSMP5baA==
+      domain: tokiomarine.com.br
+      path: /
+      secure: true
+      hostOnly: false
+      creation: 2025-09-23T18:41:41.277Z
+      lastAccessed: 2025-09-23T18:41:41.277Z
+      sameSite: none
+      id: e6363250-6ea6-49aa-a8e6-18fa8f56b119
+    - key: incap_ses_1490_2875879
+      value: KiMuFikG2XEKzg/bg4utFNfq0mgAAAAA7S1ML1OjuGbGxqpwXQZp3Q==
+      domain: tokiomarine.com.br
+      path: /
+      secure: true
+      hostOnly: false
+      creation: 2025-09-23T18:45:42.416Z
+      lastAccessed: 2025-09-23T18:45:42.416Z
+      sameSite: none
+      id: 129f2e69-6a7a-442f-bc22-78161827e744
+    - key: incap_ses_9129_2875879
+      value: rXlUI3Dq2BszkPK7irmwfqAW02gAAAAAiqaSULsUpwpj+Za5QLznjA==
+      domain: tokiomarine.com.br
+      path: /
+      secure: true
+      hostOnly: false
+      creation: 2025-09-23T21:52:30.820Z
+      lastAccessed: 2025-09-23T21:52:30.820Z
+      sameSite: none
+      id: 3432eb49-4e3f-413a-9421-5ed027d84f8b
+    - key: incap_ses_9220_2875879
+      value: h3IfTod+xQdUECaikQX0fx/p02gAAAAA4uenyNiHfMj6/xsowOW6tw==
+      domain: tokiomarine.com.br
+      path: /
+      secure: true
+      hostOnly: false
+      creation: 2025-09-24T12:50:39.774Z
+      lastAccessed: 2025-09-24T12:50:39.774Z
+      sameSite: none
+      id: f72e4521-cbc9-45bc-a063-098779e2c0ef
+    - key: incap_ses_1697_2875879
+      value: L68nAbbRt3EXe8TpvvSMF9Yv1GgAAAAAjx1b8G6UyP2iJH606mB6uA==
+      domain: tokiomarine.com.br
+      path: /
+      secure: true
+      hostOnly: false
+      creation: 2025-09-24T17:52:22.719Z
+      lastAccessed: 2025-09-24T17:52:22.719Z
+      sameSite: none
+      id: 838d89ed-7b6f-4e30-8d1d-6c2cb5076db2
+environments:
+  name: Tokio Environment
+  meta:
+    id: env_c1205405dc8aec13ffe7daf18961fc97afbf2a9b
+    created: 1758638610473
+    modified: 1758764061360
+    isPrivate: false
+  data:
+    TOKIO_CLIENT_ID_FIANCA: dcc2f79c-6375-47fe-a7b2-3ee3cb00d5aa
+    TOKIO_CLIENT_SECRET_FIANCA: yOh8Q~8kIO2zPu.eS8GmjoUcx2QzDBdEb6eW2cC9
+    TOKIO_URL_AUTH_FIANCA: https://login.microsoftonline.com/8b7cb950-a7e7-4897-9382-00f1b86d3871/oauth2/v2.0/token
+    TOKIO_SCOPE_FIANCA: api://dcc2f79c-6375-47fe-a7b2-3ee3cb00d5aa/.default
+    TOKIO_URL_FIANCA: https://apim.tokiomarine.com.br/massificados/cotador-fianca-service/api
+    TOKIO_SENHA_FIANCA: TmNsQc_2dkbED62WCkGFdw
+    TOKIO_URL_INCENDIO: https://servicos.tokiomarine.com.br
+    TOKIO_SENHA_INCENDIO: TmNsQc_2dkbED62WCkGFdw
+    TOKIO_CODIGO_CORRETOR: "49141"
