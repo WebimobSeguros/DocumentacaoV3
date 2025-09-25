@@ -27,7 +27,7 @@ export default async function Process({ params }: Props) {
             <p className={'text-muted-foreground text-sm mt-1'}>{process.descricao}</p>
         </div>
         <div>
-            <Accordion type="single" collapsible>
+            <Accordion type="multiple">
                 <AccordionItem value={'rn'}>
                     <AccordionTrigger>
                         <h2 className={'text-lg'}>• Regras de Negócio (mais relevantes)</h2>

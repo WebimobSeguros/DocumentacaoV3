@@ -89,7 +89,17 @@ export const contatos_e_links: ContatosELink = [
                 usuario: 'Livre',
                 senha: 'Livre',
                 anotacoes: 'Documentação (Fiança).',
+            },
+            {
+                titulo: 'Acesso Portal Chamados',
+                link: 'https://app.pipefy.com/public/form/e1b8FX_d',
+                usuario: 'Livre',
+                senha: 'Livre',
+                anotacoes: 'Chamados para demandas da TI',
             }
+
+            
+
         ],
         contatos: [
             {
@@ -132,13 +142,7 @@ export const contatos_e_links: ContatosELink = [
                 senha: 'Livre',
                 anotacoes: 'Documentação (Fiança)',
             },
-            {
-                titulo: 'Acesso Portal Chamados',
-                link: 'https://tooseguros.atlassian.net/servicedesk/customer/user/login',
-                usuario: 'ti@webimob.com.br',
-                senha: 'Ti@webimob2025',
-                anotacoes: '...',
-            }
+            
         ],
         contatos: [
             {
@@ -152,7 +156,7 @@ export const contatos_e_links: ContatosELink = [
                 nome: 'Abertura de chamados',
                 setor: 'TI',
                 numero: '...',
-                email: '...',
+                email: 'suporte.api.fianca@tooseguros.com.br',
                 anotacoes: 'No Portal Chamados Dev. Para criação de chamados de TI.',
             },
         ]

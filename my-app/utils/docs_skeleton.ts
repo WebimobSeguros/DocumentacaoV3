@@ -30,12 +30,6 @@ export const docs_skeleton: DocsSkeleton = {
     sections: [
       {
         title: 'Introdução ao Banco da Webimob',
-
-        //TODO: fazer 3 seções explicativas do grupo de tabelas:
-        // primarias -> imob -> produtos -> imoveis/clientes
-        // secundarias -> tabelas complementares a produtos -> logs/atividades/anexos
-        // tercearias -> tabelas de solicitação, estão vinculadas a produtos mas tem tabelas consecutivas
-
         paragrafos: [
           {
             text: 'O banco de dados da Webimob utiliza PostgreSQL e possui três tabelas principais: [imobiliarias], [produtos] e [usuarios].',
