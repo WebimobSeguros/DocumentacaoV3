@@ -15,11 +15,11 @@ collection:
       description: ""
     children:
       - url: "{{ _.PORTO_URL_CLOUD }}/oauth/v2/access-token"
-        name: Auth Porto - Env Fiança
+        name: Auth Porto - API Cloud
         meta:
           id: req_ad5725ae195b44758d2ffff8074458ec
           created: 1758638315287
-          modified: 1758734112412
+          modified: 1758767065488
           isPrivate: false
           description: ""
           sortKey: -1758638315287
@@ -51,11 +51,11 @@ collection:
             store: true
           rebuildPath: true
       - url: "{{ _.PORTO_URL }}/oauth/v2/access-token"
-        name: Auth Porto - Env Incêndio
+        name: Auth Porto - API
         meta:
           id: req_6fe0007a685f4dc1a960d1d688c2f2e6
           created: 1758727983390
-          modified: 1758734118526
+          modified: 1758767061938
           isPrivate: false
           description: ""
           sortKey: -1757865879219
