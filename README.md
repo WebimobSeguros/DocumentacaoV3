@@ -40,7 +40,6 @@ Para colaborar é muito simples:
 
 ---
 
-
 ## 👥 Contribuidores
 
 | Nome | E-mail pessoal | Número |
