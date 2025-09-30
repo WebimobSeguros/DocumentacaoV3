@@ -32,7 +32,7 @@ export const Header = () => {
           {navigation.map((item) => (
             <Link key={item.title} href={item.link}>
               <li>
-                <Button variant={"ghost"} size={"sm"}>
+                <Button className="cursor-pointer" variant={"ghost"} size={"sm"}>
                   <item.Icon />
                   {item.title}
                 </Button>

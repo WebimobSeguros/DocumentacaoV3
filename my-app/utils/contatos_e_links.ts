@@ -15,6 +15,7 @@ type ContatosELink = {
         anotacoes: string,
     }[]
 }[]
+    
 
 export const contatos_e_links: ContatosELink = [
     {
