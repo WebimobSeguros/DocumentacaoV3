@@ -43,7 +43,7 @@ export const processos: Processos = [
       'O sistema deve permitir que o usuário force a contratação, caso a contratação seja feita diretamente no portal da seguradora.',
       'O sistema deve alterar o status para "Aguardando Apólice", e a etapa para "Proposta" após a contratação ser concluída.',
 
-      'O sistema deve implementar uma tarefa periódica automatizada (cron job), que verifica o andamento das propostas na seguradora, e atualiza o status para "emitido" (caso a apólice esteja disponível) ou "devolvido".'
+      'O sistema deve implementar uma tarefa periódica automatizada (cron job), que verifica o andamento das propostas na seguradora, e atualiza o status para "emitido" (caso a apólice esteja disponível) ou "devolvido".',
     ],
   },
   {
@@ -88,8 +88,27 @@ export const processos: Processos = [
       'Desde o preenchimento dos dados, até o envio da proposta e emissão do título.',
     arquivo_bpmn: 'titulo-capitalizacao.bpmn',
     arquivo_casos_de_uso: '',
-    regras_de_negocio: [],
-    requisitos_funcionais: [],
+    regras_de_negocio: [
+      'Uma proposta de Título de Capitalização deve estar vinculada a exatamente uma imobiliária.',
+      'Uma proposta de Título de Capitalização deve estar vinculada apenas a Porto Seguro, já que é a única seguradora parceira que oferece esse produto.',
+      'Para iniciar a contratação, uma modalidade de título deve ser escolhida (12, 15, 18 ou 30 meses).',
+      'Para solicitar a geração da proposta é necessário recolher os dados obrigatórios do pretendente, do imóvel, do proprietário, além de informações básicas da proposta e da modalidade escolhida.',
+      'Deve haver uma verificação periódica sobre o status da proposta (se foi emitido ou devolvido).',
+    ],
+    requisitos_funcionais: [
+      'O sistema deve exigir que o usuário vincule uma imobiliária para cadastrar a proposta.',
+      'O sistema deve cadastrar a proposta com status "em elaboração".',
+
+      'O sistema deve impedir a alteração ou envio dos dados da proposta caso algum campo obrigatório do formulário não esteja preenchido corretamente.',
+      'O sistema deve permitir que o usuário selecione uma modalidade de título (12, 15, 18 ou 30 meses).',
+      'Para solicitar a geração da proposta na seguradora, o sistema deve exigir os dados do pretendente, do imóvel, e do proprietário, além das informações básicas da proposta e da modalidade escolhida.',
+      'O sistema deve permitir que o usuário dê baixa em uma proposta "em elaboração", caso haja a desistência da contratação.',
+      'O sistema deve permitir que o usuário solicite a geração da proposta na seguradora, e aguarde o código gerado.',
+      'O sistema deve alterar o status para "pendente" quando a proposta for gerada com sucesso.',
+      'O sistema deve permitir que o usuário force a contratação, caso a contratação seja feita diretamente no portal da seguradora.',
+      'O sistema deve implementar uma tarefa periódica automatizada (cron job), que verifica o andamento das propostas na seguradora, e atualiza o status para "emitido" (caso o pagamento tenha sido realizado) ou "devolvido".',
+
+    ],
   },
   {
     id: 'sinistros',
